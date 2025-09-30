@@ -3,18 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulador RPG de Magias y Monstruos</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Simulador RPG DOM - Entregable 2</title>
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <h1>Simulador RPG: Magias vs Monstruos</h1>
-    <p>
-      Este simulador permite al usuario jugar como un mago que se enfrenta a
-      diferentes monstruos usando hechizos mágicos. El usuario podrá elegir
-      magias, atacar monstruos y ver los resultados de los daños en la consola y
-      mediante cuadros de diálogo. El objetivo es derrotar a los monstruos
-      usando la mejor estrategia de magias.
-    </p>
-    <script src="prueba.js"></script>
+    <div class="container">
+      <h1>Simulador RPG: Batalla de Hechizos y Bestias</h1>
+      <form id="form-ataque">
+        <div
+          style="
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            gap: 18px;
+          "
+        >
+          <div style="flex: 1">
+            <label for="bestia">Elige una bestia:</label>
+            <select id="bestia"></select>
+            <label for="hechizo" style="margin-top: 12px"
+              >Elige un hechizo:</label
+            >
+            <select id="hechizo"></select>
+          </div>
+          <div id="img-bestia" style="min-width: 120px"></div>
+        </div>
+        <button type="submit">🗡️ Atacar</button>
+        <button type="button" id="reset">Reiniciar juego</button>
+      </form>
+      <div id="resultado"></div>
+      <div id="historial"></div>
+    </div>
+    <script src="js/simulador.js"></script>
   </body>
 </html>

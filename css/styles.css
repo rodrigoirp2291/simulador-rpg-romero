@@ -1,0 +1,49 @@
+select#bestia:focus {
+  outline: 2px solid #4caf50;
+  background: #eaffea;
+  font-weight: bold;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: url("../img/wallhaven-21y179.jpg") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 600px;
+  margin: 16px auto 32px auto;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  padding: 24px 18px 28px 18px;
+  backdrop-filter: blur(2px);
+}
+h1 {
+  text-align: center;
+  color: #222;
+  text-shadow: 1px 1px 6px #fff, 0 2px 8px #0002;
+}
+label,
+select,
+button {
+  display: block;
+  margin: 16px 0 8px 0;
+  color: #222;
+  font-weight: 500;
+}
+#resultado,
+#historial {
+  margin-top: 24px;
+  padding: 12px;
+  background: rgba(233, 236, 239, 0.92);
+  border-radius: 8px;
+  color: #222;
+  box-shadow: 0 1px 4px #0001;
+}
+
+select#hechizo:focus {
+  outline: 2px solid #ff9800;
+  background: #fffbe6;
+  font-weight: bold;
+}
