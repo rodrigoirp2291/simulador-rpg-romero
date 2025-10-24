@@ -29,23 +29,22 @@ Nota: Asegúrate de que la carpeta `img` contenga las imágenes referenciadas (`
 - Interacción completa mediante DOM y eventos (no se usa `prompt/alert` para flujo principal).
 - Persistencia con `localStorage` (estado de `bestias` e historial).
 - Controles UI con selects y botones, imágenes de bestias y fondo temático.
- - Sistema de tienda e inventario: puedes comprar items con oro y usarlos en batalla.
- - Recompensas: derrotar bestias otorga oro al jugador y se refleja en la UI.
- - Carga asíncrona de datos desde `data/game.json` (simulación de datos remotos).
+- Sistema de tienda e inventario: puedes comprar items con oro y usarlos en batalla.
+- Recompensas: derrotar bestias otorga oro al jugador y se refleja en la UI.
+- Carga asíncrona de datos desde `data/game.json` (simulación de datos remotos).
 
 ## Entregable
 
 Nombre del ZIP sugerido: `ProyectoFinal-Romero.zip` o `Entregable2-Romero.zip` (contiene la carpeta del proyecto lista para entregar).
 
-Repositorio en GitHub: https://github.com/rodrigoirp2291/simulador-rpg-romero
-
-Archivo ZIP ya generado localmente: `C:\\Users\\Rodrigo Romero\\ProyectoFinal-Romero.zip`
+Archivo ZIP ya generado localmente (opcional): `C:\Users\Rodrigo Romero\ProyectoFinal-Romero.zip`
 
 ---
 
-Si quieres que realice alguna mejora adicional (más bestias, efectos visuales, exportar historial a JSON, o desplegar en GitHub Pages), dime y lo agrego.
- 
- ### Notas para entrega final
- - Asegúrate de incluir la carpeta `img/` con las imágenes referenciadas (bestias y items) antes de comprimir.
- - El ZIP final recomendado se debe llamar `ProyectoFinal-Romero.zip` o `Entregable2-Romero.zip` según lo solicite el docente.
- - Si quieres, puedo generar el ZIP por ti y subirlo al repositorio (si me das permiso para ejecutar los comandos git/zip aquí).
+Si quieres que realice alguna mejora adicional (más bestias, efectos visuales o exportar el historial a JSON), dímelo y lo agrego.
+
+### Notas para entrega final
+
+- Asegúrate de incluir la carpeta `img/` con las imágenes referenciadas (bestias y items) antes de comprimir.
+- El ZIP final recomendado se debe llamar `ProyectoFinal-Romero.zip` o `Entregable2-Romero.zip` según lo solicite el docente.
+<!-- He eliminado referencias directas al repositorio y a GitHub Pages a petición del autor. -->

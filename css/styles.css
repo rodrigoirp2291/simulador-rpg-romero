@@ -48,14 +48,26 @@ select#hechizo:focus {
   font-weight: bold;
 }
 
-.shop-item img, .inventory-item img {
-  border-radius:8px;
+.shop-item img,
+.inventory-item img {
+  border-radius: 8px;
 }
 
-.shop-item button, .inventory-item button, button[type="submit"], #reset {
-  background:#1976d2;color:white;border:none;padding:6px 10px;border-radius:6px;cursor:pointer;
+.shop-item button,
+.inventory-item button,
+button[type="submit"],
+#reset {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.shop-item button:hover, .inventory-item button:hover, button[type="submit"]:hover, #reset:hover {
-  background:#115293;
+.shop-item button:hover,
+.inventory-item button:hover,
+button[type="submit"]:hover,
+#reset:hover {
+  background: #115293;
 }

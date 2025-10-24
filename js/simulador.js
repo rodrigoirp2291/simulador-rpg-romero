@@ -96,8 +96,12 @@ function atacar(e) {
     const recompensa = bestia.recompensa || 0;
     if (!estado.player) estado.player = { oro: 0, inventario: [] };
     estado.player.oro = (estado.player.oro || 0) + recompensa;
-    estado.historial.push(`Has derrotado a ${bestia.nombre} y recibiste ${recompensa} oro.`);
-    mostrarResultado(`¡Has derrotado a ${bestia.nombre}! Recompensa: ${recompensa} oro.`);
+    estado.historial.push(
+      `Has derrotado a ${bestia.nombre} y recibiste ${recompensa} oro.`
+    );
+    mostrarResultado(
+      `¡Has derrotado a ${bestia.nombre}! Recompensa: ${recompensa} oro.`
+    );
   }
   guardarEstado(estado);
   // Mantener la selección de la bestia
@@ -106,7 +110,7 @@ function atacar(e) {
   selectBestia.value = valorSeleccionado;
   mostrarHistorial();
   // actualizar UI relacionado con oro e inventario
-  if (typeof renderPlayer === 'function') renderPlayer();
+  if (typeof renderPlayer === "function") renderPlayer();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -164,20 +168,25 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.removeItem("estadoRPG");
       location.reload();
     });
-    
+
     // Render UI adicional: tienda, inventario y oro del jugador
     function renderPlayer() {
-      const oroEl = document.getElementById('oro');
+      const oroEl = document.getElementById("oro");
       oroEl.textContent = estado.player?.oro ?? 0;
     }
+    // Exponer renderPlayer globalmente para que funciones definidas fuera
+    // de este scope (por ejemplo `atacar`) puedan invocarla y forzar
+    // la actualización inmediata del UI del jugador.
+    window.renderPlayer = renderPlayer;
 
     function renderTienda() {
-      const tiendaDiv = document.getElementById('tienda');
-      tiendaDiv.innerHTML = '';
-      tienda.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'shop-item';
-        card.style = 'background:rgba(255,255,255,0.9);padding:10px;border-radius:8px;min-width:140px;text-align:center;';
+      const tiendaDiv = document.getElementById("tienda");
+      tiendaDiv.innerHTML = "";
+      tienda.forEach((item) => {
+        const card = document.createElement("div");
+        card.className = "shop-item";
+        card.style =
+          "background:rgba(255,255,255,0.9);padding:10px;border-radius:8px;min-width:140px;text-align:center;";
         card.innerHTML = `
           <img src="img/${item.imagen}" alt="${item.nombre}" style="max-width:100px;max-height:80px;display:block;margin:0 auto 8px;">
           <div style="font-weight:600">${item.nombre}</div>
@@ -189,17 +198,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function renderInventario() {
-      const inv = document.getElementById('inventario');
-      inv.innerHTML = '';
+      const inv = document.getElementById("inventario");
+      inv.innerHTML = "";
       const invArr = estado.player?.inventario || [];
       if (invArr.length === 0) {
         inv.innerHTML = '<div style="color:#666">(Inventario vacío)</div>';
         return;
       }
       invArr.forEach((it, idx) => {
-        const el = document.createElement('div');
-        el.className = 'inventory-item';
-        el.style = 'background:rgba(255,255,255,0.9);padding:8px;border-radius:8px;min-width:120px;text-align:center;';
+        const el = document.createElement("div");
+        el.className = "inventory-item";
+        el.style =
+          "background:rgba(255,255,255,0.9);padding:8px;border-radius:8px;min-width:120px;text-align:center;";
         el.innerHTML = `
           <img src="img/${it.imagen}" alt="${it.nombre}" style="max-width:80px;max-height:60px;display:block;margin:0 auto 6px;">
           <div style="font-weight:600">${it.nombre}</div>
@@ -210,12 +220,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Exponer funciones globales para botones inline
-    window.comprarItem = function(id) {
-      const item = tienda.find(x => x.id === id);
+    window.comprarItem = function (id) {
+      const item = tienda.find((x) => x.id === id);
       if (!item) return;
       if (!estado.player) estado.player = { oro: 100, inventario: [] };
       if (estado.player.oro < item.precio) {
-        mostrarResultado('No tienes suficiente oro.');
+        mostrarResultado("No tienes suficiente oro.");
         return;
       }
       estado.player.oro -= item.precio;
@@ -226,16 +236,18 @@ document.addEventListener("DOMContentLoaded", () => {
       mostrarResultado(`Compraste ${item.nombre} por ${item.precio} oro.`);
     };
 
-    window.usarItem = function(index) {
+    window.usarItem = function (index) {
       if (!estado.player || !estado.player.inventario[index]) return;
       const item = estado.player.inventario.splice(index, 1)[0];
       // efecto simple: si cura, sumar vida a la bestia seleccionada
-      const selectBestia = document.getElementById('bestia');
+      const selectBestia = document.getElementById("bestia");
       const idx = parseInt(selectBestia.value);
       const b = estado.bestias[idx];
-      if (item.efecto === 'curar' && b) {
+      if (item.efecto === "curar" && b) {
         b.vida += item.valor;
-        mostrarResultado(`Usaste ${item.nombre}. ${b.nombre} recupera ${item.valor} vida.`);
+        mostrarResultado(
+          `Usaste ${item.nombre}. ${b.nombre} recupera ${item.valor} vida.`
+        );
       } else {
         mostrarResultado(`Usaste ${item.nombre}.`);
       }
