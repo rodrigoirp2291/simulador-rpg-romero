@@ -35,7 +35,11 @@ Nota: Asegúrate de que la carpeta `img` contenga las imágenes referenciadas (`
 
 ## Entregable
 
-Nombre del ZIP sugerido: `Entregable2-Romero.zip` (contiene la carpeta del proyecto lista para entregar).
+Nombre del ZIP sugerido: `ProyectoFinal-Romero.zip` o `Entregable2-Romero.zip` (contiene la carpeta del proyecto lista para entregar).
+
+Repositorio en GitHub: https://github.com/rodrigoirp2291/simulador-rpg-romero
+
+Archivo ZIP ya generado localmente: `C:\\Users\\Rodrigo Romero\\ProyectoFinal-Romero.zip`
 
 ---
 
