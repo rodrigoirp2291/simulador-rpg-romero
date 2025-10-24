@@ -1,6 +1,6 @@
 # Simulador RPG: Batalla de Hechizos y Bestias
 
-Proyecto: Entregable 2 - Simulador RPG (Integración DOM, Eventos y localStorage)
+Proyecto: Entregable Final - Simulador RPG (Integración DOM, Eventos y localStorage)
 
 Autor: Rodrigo Romero
 
@@ -22,7 +22,8 @@ Esta webapp simula combates entre un mago (tú) y varias bestias. Puedes elegir 
 3. Haz clic en el botón “🗡️ Atacar” para aplicar daño.
 4. Usa “Reiniciar juego” para borrar el progreso (limpia `localStorage`).
 
-Nota: Asegúrate de que la carpeta `img` contenga las imágenes referenciadas (`goblin.jpg`, `troll2.jpg`, `dragon.jpg`, `wallhaven-21y179.jpg`), ya que el proyecto las carga desde `img/`.
+
+
 
 ## Funcionalidades principales
 
@@ -33,18 +34,5 @@ Nota: Asegúrate de que la carpeta `img` contenga las imágenes referenciadas (`
 - Recompensas: derrotar bestias otorga oro al jugador y se refleja en la UI.
 - Carga asíncrona de datos desde `data/game.json` (simulación de datos remotos).
 
-## Entregable
+<!-- Se removió la sección "Entregable" y notas relacionadas al ZIP por petición del autor. -->
 
-Nombre del ZIP sugerido: `ProyectoFinal-Romero.zip` o `Entregable2-Romero.zip` (contiene la carpeta del proyecto lista para entregar).
-
-Archivo ZIP ya generado localmente (opcional): `C:\Users\Rodrigo Romero\ProyectoFinal-Romero.zip`
-
----
-
-Si quieres que realice alguna mejora adicional (más bestias, efectos visuales o exportar el historial a JSON), dímelo y lo agrego.
-
-### Notas para entrega final
-
-- Asegúrate de incluir la carpeta `img/` con las imágenes referenciadas (bestias y items) antes de comprimir.
-- El ZIP final recomendado se debe llamar `ProyectoFinal-Romero.zip` o `Entregable2-Romero.zip` según lo solicite el docente.
-<!-- He eliminado referencias directas al repositorio y a GitHub Pages a petición del autor. -->
