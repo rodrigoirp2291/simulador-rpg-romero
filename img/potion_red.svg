@@ -6,11 +6,12 @@
     </linearGradient>
   </defs>
   <g fill="none" fill-rule="evenodd">
-    <rect x="12" y="8" width="40" height="12" rx="4" fill="#444"/>
-    <path d="M20 20c0-6 8-6 12-6s12 0 12 6v56c0 6-4 8-12 8s-12-2-12-8V20z" fill="url(#g)" stroke="#b33636" stroke-width="1.5"/>
-    <ellipse cx="32" cy="28" rx="10" ry="4" fill="#fff" opacity="0.12"/>
-    <g transform="translate(22,60)" fill="#fff" opacity="0.18">
-      <rect x="0" y="0" width="20" height="6" rx="3"/>
-    </g>
+    <!-- tapa -->
+    <rect x="25" y="6" width="14" height="10" rx="3" fill="#333" />
+    <!-- cuello -->
+    <path d="M28 16c0-3 8-3 8 0v6c0 3-3 6-8 6s-8-3-8-6v-6z" fill="#b33636" opacity="0.9"/>
+    <!-- cuerpo tipo matraz de alquimista -->
+    <path d="M16 28c0-8 16-16 16-16s16 8 16 16c0 12-10 24-16 28-6-4-16-16-16-28z" fill="url(#g)" stroke="#b33636" stroke-width="1.2"/>
+    <ellipse cx="32" cy="34" rx="12" ry="5" fill="#fff" opacity="0.12"/>
   </g>
 </svg>

@@ -43,7 +43,12 @@ function cargarEstado() {
     return JSON.parse(guardado);
   }
   // clonar bestias para estado inicial
-  return { bestias: JSON.parse(JSON.stringify(bestias)), historial: [] };
+  // estado inicial: bestias clonadas, historial, y jugador con capacidad por defecto
+  return {
+    bestias: JSON.parse(JSON.stringify(bestias)),
+    historial: [],
+    player: { oro: 100, inventario: [], capacidad: 6 },
+  };
 }
 
 function guardarEstado(estado) {
@@ -210,10 +215,11 @@ document.addEventListener("DOMContentLoaded", () => {
         el.className = "inventory-item";
         el.style =
           "background:rgba(255,255,255,0.9);padding:8px;border-radius:8px;min-width:120px;text-align:center;";
+        const boton = it.consumible === false ? '<button style="margin-top:6px;" disabled>Equipado</button>' : `<button style="margin-top:6px;" onclick="usarItem(${idx})">Usar</button>`;
         el.innerHTML = `
           <img src="img/${it.imagen}" alt="${it.nombre}" style="max-width:80px;max-height:60px;display:block;margin:0 auto 6px;">
           <div style="font-weight:600">${it.nombre}</div>
-          <button style="margin-top:6px;" onclick="usarItem(${idx})">Usar</button>
+          ${boton}
         `;
         inv.appendChild(el);
       });
@@ -224,21 +230,46 @@ document.addEventListener("DOMContentLoaded", () => {
       const item = tienda.find((x) => x.id === id);
       if (!item) return;
       if (!estado.player) estado.player = { oro: 100, inventario: [] };
+      // verificar capacidad del inventario antes de comprar
+      const capacidad = estado.player.capacidad || 6;
+      const invArr = estado.player.inventario || [];
+      if (invArr.length >= capacidad) {
+        mostrarResultado("No tienes espacio en el inventario. Compra una Mochila para aumentar la capacidad.");
+        return;
+      }
+
       if (estado.player.oro < item.precio) {
         mostrarResultado("No tienes suficiente oro.");
         return;
       }
       estado.player.oro -= item.precio;
-      estado.player.inventario.push(item);
+      // si el item aumenta capacidad, aplicarlo y marcar como no consumible
+      if (item.efecto === "capacidad") {
+        estado.player.capacidad = (estado.player.capacidad || 6) + item.valor;
+        // añadir a inventario como equipo (no consumible)
+        const copia = Object.assign({}, item);
+        copia.consumible = false;
+        estado.player.inventario.push(copia);
+        mostrarResultado(`Compraste ${item.nombre}. Capacidad aumentada a ${estado.player.capacidad}.`);
+      } else {
+        estado.player.inventario.push(item);
+        mostrarResultado(`Compraste ${item.nombre} por ${item.precio} oro.`);
+      }
       guardarEstado(estado);
       renderPlayer();
       renderInventario();
-      mostrarResultado(`Compraste ${item.nombre} por ${item.precio} oro.`);
     };
 
     window.usarItem = function (index) {
       if (!estado.player || !estado.player.inventario[index]) return;
-      const item = estado.player.inventario.splice(index, 1)[0];
+      const item = estado.player.inventario[index];
+      // Si el item no es consumible (ej. mochila), no removerlo, solo mostrar mensaje
+      if (item.consumible === false) {
+        mostrarResultado(`${item.nombre} está equipado y aumenta tu capacidad.`);
+        return;
+      }
+      // remover item consumible
+      const removed = estado.player.inventario.splice(index, 1)[0];
       // efecto simple: si cura, sumar vida a la bestia seleccionada
       const selectBestia = document.getElementById("bestia");
       const idx = parseInt(selectBestia.value);
@@ -256,8 +287,8 @@ document.addEventListener("DOMContentLoaded", () => {
       actualizarOpciones();
     };
 
-    // inicial render
-    if (!estado.player) estado.player = { oro: 100, inventario: [] };
+  // inicial render
+  if (!estado.player) estado.player = { oro: 100, inventario: [], capacidad: 6 };
     renderPlayer();
     renderTienda();
     renderInventario();

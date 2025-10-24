@@ -34,7 +34,8 @@
       "efecto": "curar",
       "valor": 30,
       "precio": 35,
-      "imagen": "potion_red.svg"
+      "imagen": "potion_red.svg",
+      "consumible": true
     },
     {
       "id": 2,
@@ -42,7 +43,8 @@
       "efecto": "mana",
       "valor": 20,
       "precio": 30,
-      "imagen": "potion_blue.svg"
+      "imagen": "potion_blue.svg",
+      "consumible": true
     }
     ,
     {
@@ -51,7 +53,8 @@
       "efecto": "capacidad",
       "valor": 1,
       "precio": 60,
-      "imagen": "backpack.svg"
+      "imagen": "backpack.svg",
+      "consumible": false
     }
   ]
 }
