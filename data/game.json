@@ -34,7 +34,7 @@
       "efecto": "curar",
       "valor": 30,
       "precio": 35,
-      "imagen": "pocion_vida.png"
+      "imagen": "wallhaven-9omq61.png"
     },
     {
       "id": 2,
@@ -42,7 +42,7 @@
       "efecto": "mana",
       "valor": 20,
       "precio": 30,
-      "imagen": "elixir_mana.png"
+      "imagen": "wallhaven-po99ee.jpg"
     }
   ]
 }
