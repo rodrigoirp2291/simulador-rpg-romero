@@ -34,7 +34,7 @@
       "efecto": "curar",
       "valor": 30,
       "precio": 35,
-      "imagen": "wallhaven-9omq61.png"
+      "imagen": "potion_red.svg"
     },
     {
       "id": 2,
@@ -42,7 +42,16 @@
       "efecto": "mana",
       "valor": 20,
       "precio": 30,
-      "imagen": "wallhaven-po99ee.jpg"
+      "imagen": "potion_blue.svg"
+    }
+    ,
+    {
+      "id": 3,
+      "nombre": "Mochila",
+      "efecto": "capacidad",
+      "valor": 1,
+      "precio": 60,
+      "imagen": "backpack.svg"
     }
   ]
 }
