@@ -1,0 +1,48 @@
+{
+  "hechizos": [
+    { "nombre": "Llama Ardiente", "daño": 30, "icono": "🔥", "precio": 50 },
+    { "nombre": "Ventisca", "daño": 20, "icono": "❄️", "precio": 40 },
+    { "nombre": "Trueno", "daño": 25, "icono": "⚡", "precio": 45 }
+  ],
+  "bestias": [
+    {
+      "nombre": "Duende",
+      "vida": 50,
+      "icono": "👹",
+      "imagen": "goblin.jpg",
+      "recompensa": 10
+    },
+    {
+      "nombre": "Trol",
+      "vida": 80,
+      "icono": "🧌",
+      "imagen": "troll2.jpg",
+      "recompensa": 20
+    },
+    {
+      "nombre": "Wyvern",
+      "vida": 120,
+      "icono": "🐲",
+      "imagen": "dragon.jpg",
+      "recompensa": 50
+    }
+  ],
+  "tienda": [
+    {
+      "id": 1,
+      "nombre": "Poción de Vida",
+      "efecto": "curar",
+      "valor": 30,
+      "precio": 35,
+      "imagen": "pocion_vida.png"
+    },
+    {
+      "id": 2,
+      "nombre": "Elixir de Mana",
+      "efecto": "mana",
+      "valor": 20,
+      "precio": 30,
+      "imagen": "elixir_mana.png"
+    }
+  ]
+}
